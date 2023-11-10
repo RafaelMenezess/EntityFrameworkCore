@@ -14,6 +14,8 @@ namespace Alura.Filmes.App
                     Console.WriteLine(ator);
                 }
             }
+
+            Console.ReadKey();
         }
     }
 }
