@@ -129,6 +129,10 @@
     <Compile Include="Migrations\20231111182614_Inicial.designer.cs">
       <DependentUpon>20231111182614_Inicial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\20231111184817_DateTime.cs" />
+    <Compile Include="Migrations\20231111184817_DateTime.designer.cs">
+      <DependentUpon>20231111184817_DateTime.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\AluraFilmesContextoModelSnapshot.cs" />
     <Compile Include="Negocio\Ator.cs" />
     <Compile Include="Program.cs" />
