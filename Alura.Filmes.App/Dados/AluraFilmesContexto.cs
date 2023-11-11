@@ -10,7 +10,7 @@ namespace Alura.Filmes.App.Dados
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=Filmes;Trusted_connection=true;");
+            optionsBuilder.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=FilmesTST;Trusted_connection=true;");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
