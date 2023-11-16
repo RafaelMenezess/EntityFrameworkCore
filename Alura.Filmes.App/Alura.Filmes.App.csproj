@@ -128,6 +128,7 @@
     <Compile Include="Dados\AtorConfig.cs" />
     <Compile Include="Dados\FilmeAtorConfig.cs" />
     <Compile Include="Dados\FilmeConfig.cs" />
+    <Compile Include="Dados\IdiomaConfig.cs" />
     <Compile Include="Migrations\20231111182614_Inicial.cs" />
     <Compile Include="Migrations\20231111182614_Inicial.designer.cs">
       <DependentUpon>20231111182614_Inicial.cs</DependentUpon>
@@ -136,10 +137,15 @@
     <Compile Include="Migrations\20231111184817_DateTime.designer.cs">
       <DependentUpon>20231111184817_DateTime.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\20231116193911_Idioma.cs" />
+    <Compile Include="Migrations\20231116193911_Idioma.designer.cs">
+      <DependentUpon>20231116193911_Idioma.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\AluraFilmesContextoModelSnapshot.cs" />
     <Compile Include="Negocio\Ator.cs" />
     <Compile Include="Negocio\Filme.cs" />
     <Compile Include="Negocio\FilmeAtor.cs" />
+    <Compile Include="Negocio\Idioma.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -12,17 +12,9 @@ namespace Alura.Filmes.App
         {
             using (var contexto = new AluraFilmesContexto())
             {
-                var filme = contexto.Filmes
-                    .Include(f => f.Atores)
-                    .ThenInclude(fa => fa.Ator)
-                    .First();
-
-                Console.WriteLine(filme);
-                Console.WriteLine("Elenco");
-
-                foreach (var ator in filme.Atores)
+                foreach (var idioma in contexto.Idiomas)
                 {
-                    Console.WriteLine(ator.Ator);
+                    Console.WriteLine(idioma);
                 }
             }
 
