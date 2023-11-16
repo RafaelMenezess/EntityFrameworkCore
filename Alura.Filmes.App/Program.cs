@@ -13,13 +13,9 @@ namespace Alura.Filmes.App
             using (var contexto = new AluraFilmesContexto())
             {
 
-                var atores = contexto.Atores
-                    .OrderByDescending(a => EF.Property<DateTime>(a, "last_update"))
-                    .Take(10);
-
-                foreach (var a in atores)
+                foreach (var filme in contexto.Filmes)
                 {
-                    Console.WriteLine(a + " - " + contexto.Entry(a).Property("last_update").CurrentValue);
+                    Console.WriteLine(filme);
                 }
 
             }
