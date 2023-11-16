@@ -69,7 +69,7 @@ namespace Alura.Filmes.App.Dados
                 .HasColumnName("length");
 
             modelBuilder.Entity<Filme>()
-                .Property<DateTime>("last_upadte")
+                .Property<DateTime>("last_update")
                 .HasColumnType("datetime")
                 .IsRequired();
         }
