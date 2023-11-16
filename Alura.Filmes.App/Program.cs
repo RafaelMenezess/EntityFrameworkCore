@@ -12,15 +12,16 @@ namespace Alura.Filmes.App
         {
             using (var contexto = new AluraFilmesContexto())
             {
+                var filme = contexto.Filmes
+                    .Include(f => f.Atores)
+                    .First();
 
-                foreach (var item in contexto.Elenco)
+                Console.WriteLine(filme);
+                Console.WriteLine("Elenco");
+
+                foreach (var item in filme.Atores)
                 {
-                    var entidade = contexto.Entry(item);
-                    var filmId = entidade.Property("film_id").CurrentValue;
-                    var actorId = entidade.Property("actor_id").CurrentValue;
-                    var lastUpd = entidade.Property("last_update").CurrentValue;
-
-                    Console.WriteLine($"Filme {filmId}, Ator {actorId}, LastUpdate {lastUpd}");
+                    
                 }
             }
 
