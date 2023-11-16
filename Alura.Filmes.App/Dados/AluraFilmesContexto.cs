@@ -40,6 +40,38 @@ namespace Alura.Filmes.App.Dados
                  .HasColumnType("datetime")
                  .HasDefaultValueSql("getdate()")
                  .IsRequired();
+
+            modelBuilder.Entity<Filme>()
+                .ToTable("film");
+
+            modelBuilder.Entity<Filme>()
+                .Property(f => f.Id)
+                .HasColumnName("film_id");
+
+            modelBuilder.Entity<Filme>()
+                .Property(f => f.Titulo)
+                .HasColumnName("title")
+                .HasColumnType("varchar(255)")
+                .IsRequired();
+
+            modelBuilder.Entity<Filme>()
+                .Property(f => f.Descricao)
+                .HasColumnName("description")
+                .HasColumnType("text");
+
+            modelBuilder.Entity<Filme>()
+                .Property(f => f.AnoLancamento)
+                .HasColumnName("release_year")
+                .HasColumnType("varchar(4)");
+
+            modelBuilder.Entity<Filme>()
+                .Property(f => f.Duracao)
+                .HasColumnName("length");
+
+            modelBuilder.Entity<Filme>()
+                .Property<DateTime>("last_upadte")
+                .HasColumnType("datetime")
+                .IsRequired();
         }
     }
 }
