@@ -13,9 +13,9 @@ namespace Alura.Filmes.App
             using (var contexto = new AluraFilmesContexto())
             {
 
-                foreach (var filme in contexto.Filmes)
+                foreach (var item in contexto.Elenco)
                 {
-                    Console.WriteLine(filme);
+                    Console.WriteLine(item);
                 }
             }
 
