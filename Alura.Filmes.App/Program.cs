@@ -17,7 +17,6 @@ namespace Alura.Filmes.App
                 {
                     Console.WriteLine(filme);
                 }
-
             }
 
             Console.ReadKey();
