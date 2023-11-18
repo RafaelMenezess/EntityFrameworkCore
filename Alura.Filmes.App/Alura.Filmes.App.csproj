@@ -137,9 +137,9 @@
     <Compile Include="Migrations\20231111184817_DateTime.designer.cs">
       <DependentUpon>20231111184817_DateTime.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\20231116193911_Idioma.cs" />
-    <Compile Include="Migrations\20231116193911_Idioma.designer.cs">
-      <DependentUpon>20231116193911_Idioma.cs</DependentUpon>
+    <Compile Include="Migrations\20231118002656_Idioma.cs" />
+    <Compile Include="Migrations\20231118002656_Idioma.designer.cs">
+      <DependentUpon>20231118002656_Idioma.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\AluraFilmesContextoModelSnapshot.cs" />
     <Compile Include="Negocio\Ator.cs" />

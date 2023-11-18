@@ -45,7 +45,7 @@ namespace Alura.Filmes.App.Dados
                 .Property<byte>("language_id");
 
             builder
-                .Property<byte>("original_language_id");
+                .Property<byte?>("original_language_id");
 
             builder
                 .HasOne(f => f.IdiomaFalado)
