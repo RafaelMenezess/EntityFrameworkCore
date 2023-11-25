@@ -141,6 +141,10 @@
     <Compile Include="Migrations\20231118002656_Idioma.designer.cs">
       <DependentUpon>20231118002656_Idioma.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\20231125173607_IndiceAtorUltimoNome.cs" />
+    <Compile Include="Migrations\20231125173607_IndiceAtorUltimoNome.designer.cs">
+      <DependentUpon>20231125173607_IndiceAtorUltimoNome.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\AluraFilmesContextoModelSnapshot.cs" />
     <Compile Include="Negocio\Ator.cs" />
     <Compile Include="Negocio\Filme.cs" />
