@@ -17,7 +17,7 @@ namespace Alura.Filmes.App
                 filme.Titulo = "Senhor dos Anéis";
                 filme.Duracao = 120;
                 filme.AnoLancamento = "2000";
-                filme.Classificacao = "qualquer";
+                filme.Classificacao = ClassificacaoIndicativa.Livre;
                 filme.IdiomaFalado = contexto.Idiomas.FirstOrDefault();
 
                 contexto.Entry(filme).Property("last_update").CurrentValue = DateTime.Now;
