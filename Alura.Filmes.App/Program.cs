@@ -2,6 +2,7 @@
 using System.IO;
 using System.Linq;
 using Alura.Filmes.App.Dados;
+using Alura.Filmes.App.Extensions;
 using Alura.Filmes.App.Negocio;
 using Microsoft.EntityFrameworkCore;
 
@@ -13,17 +14,24 @@ namespace Alura.Filmes.App
         {
             using (var contexto = new AluraFilmesContexto())
             {
-                var filme = new Filme();
-                filme.Titulo = "Senhor dos Anéis";
-                filme.Duracao = 120;
-                filme.AnoLancamento = "2000";
-                filme.Classificacao = ClassificacaoIndicativa.Livre;
-                filme.IdiomaFalado = contexto.Idiomas.FirstOrDefault();
+                var livre = ClassificacaoIndicativa.Livre;
 
-                contexto.Entry(filme).Property("last_update").CurrentValue = DateTime.Now;
+                Console.WriteLine(livre.ParaString());
 
-                contexto.Filmes.Add(filme);
-                contexto.SaveChanges();
+                Console.WriteLine("G".ParaValor());
+
+
+                //var filme = new Filme();
+                //filme.Titulo = "Senhor dos Anéis";
+                //filme.Duracao = 120;
+                //filme.AnoLancamento = "2000";
+                //filme.Classificacao = ClassificacaoIndicativa.Livre;
+                //filme.IdiomaFalado = contexto.Idiomas.FirstOrDefault();
+
+                //contexto.Entry(filme).Property("last_update").CurrentValue = DateTime.Now;
+
+                //contexto.Filmes.Add(filme);
+                //contexto.SaveChanges();
             }
 
             Console.ReadKey();
