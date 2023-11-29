@@ -14,17 +14,25 @@ namespace Alura.Filmes.App
         {
             using (var contexto = new AluraFilmesContexto())
             {
-                Console.WriteLine("Clientes: ");
-                foreach (var cliente in contexto.Clientes)
-                {
-                    Console.WriteLine(cliente);
-                }
+                var sql = @"select a.*
+                            from actor a
+                            inner join
+                            (select top 5 a.actor_id, count(*) as total
+                            from actor a
+                            inner join film_actor fa on fa.actor_id = a.actor_id
+                            group by a.actor_id
+                            order by total desc) filmes on filmes.actor_id = a.actor_id";
 
+                var atoresMaisAtuantes = contexto.Atores
+                                            .FromSql(sql)
+                                            .Include(a => a.Filmografia);
+                    //.Include(a => a.Filmografia)
+                    //.OrderByDescending(a => a.Filmografia.Count)
+                    //.Take(5);
 
-                Console.WriteLine("Funcionarios: ");
-                foreach (var fun in contexto.Funcionarios)
+                foreach (var ator in atoresMaisAtuantes)
                 {
-                    Console.WriteLine(fun);
+                    Console.WriteLine($"O ator {ator.PrimeiroNome + " " + ator.UltimoNome} atuou em {ator.Filmografia.Count} filmes.");
                 }
             }
 

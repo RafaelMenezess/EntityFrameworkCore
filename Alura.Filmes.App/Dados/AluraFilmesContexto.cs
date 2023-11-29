@@ -1,7 +1,5 @@
 ﻿using Alura.Filmes.App.Negocio;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
 
 namespace Alura.Filmes.App.Dados
 {
@@ -22,11 +20,11 @@ namespace Alura.Filmes.App.Dados
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfiguration(new AtorConfig());
-            
-            modelBuilder.ApplyConfiguration(new FilmeConfig());   
-            
-            modelBuilder.ApplyConfiguration(new FilmeAtorConfig());            
-            
+
+            modelBuilder.ApplyConfiguration(new FilmeConfig());
+
+            modelBuilder.ApplyConfiguration(new FilmeAtorConfig());
+
             modelBuilder.ApplyConfiguration(new IdiomaConfig());
 
             modelBuilder.ApplyConfiguration(new ClienteConfig());
