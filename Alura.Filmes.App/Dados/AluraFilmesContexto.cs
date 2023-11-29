@@ -1,6 +1,7 @@
 ﻿using Alura.Filmes.App.Negocio;
 using Microsoft.EntityFrameworkCore;
 using System;
+using System.Collections.Generic;
 
 namespace Alura.Filmes.App.Dados
 {
@@ -10,10 +11,12 @@ namespace Alura.Filmes.App.Dados
         public DbSet<Filme> Filmes { get; set; }
         public DbSet<FilmeAtor> Elenco { get; set; }
         public DbSet<Idioma> Idiomas { get; set; }
+        public DbSet<Cliente> Clientes { get; internal set; }
+        public DbSet<Funcionario> Funcionarios { get; internal set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=FilmesTST;Trusted_connection=true;");
+            optionsBuilder.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=Filmes;Trusted_connection=true;");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -24,7 +27,9 @@ namespace Alura.Filmes.App.Dados
             
             modelBuilder.ApplyConfiguration(new FilmeAtorConfig());            
             
-            modelBuilder.ApplyConfiguration(new IdiomaConfig());            
+            modelBuilder.ApplyConfiguration(new IdiomaConfig());
+
+            modelBuilder.ApplyConfiguration(new ClienteConfig());
         }
     }
 }

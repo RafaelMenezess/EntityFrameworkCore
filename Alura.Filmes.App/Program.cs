@@ -14,21 +14,18 @@ namespace Alura.Filmes.App
         {
             using (var contexto = new AluraFilmesContexto())
             {
-                var filme = new Filme();
-                filme.Titulo = "Cassino Royale";
-                filme.Duracao = 120;
-                filme.AnoLancamento = "2000";
-                filme.Classificacao = ClassificacaoIndicativa.MaioresQue14;
-                filme.IdiomaFalado = contexto.Idiomas.FirstOrDefault();
+                Console.WriteLine("Clientes: ");
+                foreach (var cliente in contexto.Clientes)
+                {
+                    Console.WriteLine(cliente);
+                }
 
-                contexto.Entry(filme).Property("last_update").CurrentValue = DateTime.Now;
 
-                contexto.Filmes.Add(filme);
-                contexto.SaveChanges();
-
-                var filmeDB = contexto.Filmes.First(f => f.Titulo == "Cassino Royale");
-
-                Console.WriteLine(filmeDB.Classificacao);
+                Console.WriteLine("Funcionarios: ");
+                foreach (var fun in contexto.Funcionarios)
+                {
+                    Console.WriteLine(fun);
+                }
             }
 
             Console.ReadKey();
