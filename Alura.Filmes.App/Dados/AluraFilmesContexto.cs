@@ -30,6 +30,8 @@ namespace Alura.Filmes.App.Dados
             modelBuilder.ApplyConfiguration(new IdiomaConfig());
 
             modelBuilder.ApplyConfiguration(new ClienteConfig());
+
+            modelBuilder.ApplyConfiguration(new FuncionarioConfig());
         }
     }
 }

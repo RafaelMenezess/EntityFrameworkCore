@@ -129,7 +129,9 @@
     <Compile Include="Dados\ClienteConfig.cs" />
     <Compile Include="Dados\FilmeAtorConfig.cs" />
     <Compile Include="Dados\FilmeConfig.cs" />
+    <Compile Include="Dados\FuncionarioConfig.cs" />
     <Compile Include="Dados\IdiomaConfig.cs" />
+    <Compile Include="Dados\PessoaConfig.cs" />
     <Compile Include="Extensions\ClassificacaoIndicativaExtensions.cs" />
     <Compile Include="Migrations\20231111182614_Inicial.cs" />
     <Compile Include="Migrations\20231111182614_Inicial.designer.cs">
@@ -167,6 +169,7 @@
     <Compile Include="Negocio\FilmeAtor.cs" />
     <Compile Include="Negocio\Funcionario.cs" />
     <Compile Include="Negocio\Idioma.cs" />
+    <Compile Include="Negocio\Pessoa.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
