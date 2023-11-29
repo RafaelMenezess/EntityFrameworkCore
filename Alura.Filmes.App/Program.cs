@@ -17,11 +17,8 @@ namespace Alura.Filmes.App
                 var sql = @"select a.*
                             from actor a
                             inner join
-                            (select top 5 a.actor_id, count(*) as total
-                            from actor a
-                            inner join film_actor fa on fa.actor_id = a.actor_id
-                            group by a.actor_id
-                            order by total desc) filmes on filmes.actor_id = a.actor_id";
+                            top5_most_starred_actors
+                            filmes on filmes.actor_id = a.actor_id";
 
                 var atoresMaisAtuantes = contexto.Atores
                                             .FromSql(sql)
