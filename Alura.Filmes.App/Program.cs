@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data.SqlClient;
 using System.IO;
 using System.Linq;
 using Alura.Filmes.App.Dados;
@@ -14,23 +15,23 @@ namespace Alura.Filmes.App
         {
             using (var contexto = new AluraFilmesContexto())
             {
-                var sql = @"select a.*
-                            from actor a
-                            inner join
-                            top5_most_starred_actors
-                            filmes on filmes.actor_id = a.actor_id";
-
-                var atoresMaisAtuantes = contexto.Atores
-                                            .FromSql(sql)
-                                            .Include(a => a.Filmografia);
-                    //.Include(a => a.Filmografia)
-                    //.OrderByDescending(a => a.Filmografia.Count)
-                    //.Take(5);
-
-                foreach (var ator in atoresMaisAtuantes)
+                var categ = "Action";
+                var paramCateg = new SqlParameter("category_name", categ);
+                var paramTotal = new SqlParameter
                 {
-                    Console.WriteLine($"O ator {ator.PrimeiroNome + " " + ator.UltimoNome} atuou em {ator.Filmografia.Count} filmes.");
-                }
+                    ParameterName = "@total_actors",
+                    Size = 4,
+                    Direction = System.Data.ParameterDirection.Output
+                };
+
+                contexto
+                    .Database
+                    .ExecuteSqlCommand("total_actors_from_given_category @category_name, @total_actors OUT", 
+                                        paramCateg, 
+                                        paramTotal);
+
+                Console.WriteLine($"O total de atores na categoria {categ} é de {paramTotal.Value}.");
+
             }
 
             Console.ReadKey();
